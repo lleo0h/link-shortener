@@ -39,7 +39,7 @@ export function App() {
       <div className="flex flex-1 items-center justify-center px-4">
         <form className="flex flex-col gap-3 w-full max-w-2xl" onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-3xl font-bold">ENCURTAR URL</h1>
-          <Input {...register('url', { required: true, pattern: { value: /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-./?%&=]*)?$/, message: 'Insira uma URL válida.' } })} className="w-full h-10 rounded-sm" placeholder="https://github.com/lleo0h" />
+          <Input {...register('url', { required: true })}  type="url" className="w-full h-10 rounded-sm" placeholder="https://github.com/lleo0h" />
           <Button disabled={(!useFormWatchUrl || loading === true)} type="submit" className="w-full h-10 rounded-sm bg-neutral-500 font-bold">ENCURTAR</Button>
           <div className={`p-3 bg-gray-100 rounded-md flex items-center ${loading ? "justify-center" : "justify-between"}`}>
             {loading
